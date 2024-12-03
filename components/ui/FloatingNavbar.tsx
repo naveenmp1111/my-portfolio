@@ -29,14 +29,12 @@ export const FloatingNav = ({
     if (typeof current === "number") {
       let direction = current! - scrollYProgress.getPrevious()!;
 
-      if (scrollYProgress.get() < 0.05) {
-        setVisible(false);
+      // Make the navbar visible if at the top of the screen
+      if (scrollYProgress.get() <= 0.05) {
+        setVisible(true);
       } else {
-        if (direction < 0) {
-          setVisible(true);
-        } else {
-          setVisible(false);
-        }
+        // Toggle visibility based on scroll direction
+        setVisible(direction < 0);
       }
     }
   });
