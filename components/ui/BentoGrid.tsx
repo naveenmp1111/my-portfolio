@@ -1,11 +1,15 @@
 "use client"
 import { cn } from "@/lib/utils";
 import { FaReact, FaNodeJs } from 'react-icons/fa'; // React and Node.js icons
+import { IoMdCheckmark  } from 'react-icons/io'; // React and Node.js icons
 import { SiMongodb, SiTailwindcss } from 'react-icons/si'; // MongoDB and other icons
 import { BackgroundGradientAnimation } from "./Background-gradient-animation";
 import MagicButton from "./MagicButton";
 import { useState } from "react";
 import { IoMdCopy } from "react-icons/io";
+import { AnimatePresence,motion } from "framer-motion";
+
+
 
 export const BentoGrid = ({
   className,
@@ -43,12 +47,20 @@ export const BentoGridItem = ({
   id?: number,
   image?: string
 }) => {
-  const [copied,setCopy]=useState(false)
-  const handleClick=()=>{
+  const [copied, setCopy] = useState(false)
+  const handleClick = () => {
     navigator.clipboard.writeText('naveenapk048@gmail.com')
     setCopy(true)
   }
-  const icons=[<SiMongodb key="mongodb" className="w-12 h-12"/>, <FaReact key="react" className="w-12 h-12"/>, <FaNodeJs key="node" className="w-12 h-12"/>, <SiTailwindcss key="tailwind" className="w-12 h-12"/>]
+    const handleDownloadCV = () => {
+      const link = document.createElement('a');
+      link.href = '/resume.pdf'; // Path to your resume file
+      link.download = 'Naveen_resume.pdf';
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    };
+  const icons = [<SiMongodb key="mongodb" className="w-12 h-12" />, <FaReact key="react" className="w-12 h-12" />, <FaNodeJs key="node" className="w-12 h-12" />, <SiTailwindcss key="tailwind" className="w-12 h-12" />]
   return (
     <div
       className={cn(
@@ -58,7 +70,7 @@ export const BentoGridItem = ({
       )}
       style={{
         backgroundImage: image && `linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url(${image})`,
-          // : `linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6))`,
+        // : `linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6))`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -74,35 +86,56 @@ export const BentoGridItem = ({
         </div>
 
       </div> */}
-      
-      {id==2 && (
+
+      {id == 2 && (
         <>
-        <h1>TechStack</h1>
-        <div className="w-full h-full flex flex-col ">
-        <div className="flex flex-wrap items-center gap-1">
-        {icons.map((icon) => (
-            <span>{icon}</span>
-          ))}
-        {icons.map((icon) => (
-            <span>{icon}</span>
-          ))}
-        {icons.map((icon) => (
-            <span>{icon}</span>
-          ))}
-        {icons.map((icon) => (
-            <span>{icon}</span>
-          ))}
-        </div>
-      </div>
-      </>
+          <h1>TechStack</h1>
+          <div className="w-full h-full flex flex-col ">
+            <div className="flex flex-wrap items-center gap-1">
+              {icons.map((icon) => (
+                <span>{icon}</span>
+              ))}
+              {icons.map((icon) => (
+                <span>{icon}</span>
+              ))}
+              {icons.map((icon) => (
+                <span>{icon}</span>
+              ))}
+              {icons.map((icon) => (
+                <span>{icon}</span>
+              ))}
+            </div>
+          </div>
+        </>
       )}
 
       {
-        id==4 &&
+        id == 4 &&
         <BackgroundGradientAnimation>
-           <div>
-                <MagicButton title={`${copied?'Email Copied! ' : "Copy Email "}`} icon={<IoMdCopy className="mx-1 text-lg"/>} onClick={handleClick}/>
-           </div>
+          <AnimatePresence mode="wait">
+          <motion.div
+            key={copied ? 'copied' : 'copy'}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+          >
+            <MagicButton
+              title={copied ? 'Email Copied!' : 'Copy Email'}
+              icon={copied ? <IoMdCheckmark className="ml-2 text-2xl" /> : <IoMdCopy className="ml-2 text-2xl" />}
+              onClick={handleClick}
+            />
+          </motion.div>
+        </AnimatePresence>
+        </BackgroundGradientAnimation>
+      }
+
+      {
+        id == 6 &&
+        <BackgroundGradientAnimation>
+          <div>
+            <MagicButton title="Download Resume" icon={<IoMdCopy className="mx-1 text-lg" />} onClick={handleDownloadCV}/>
+          </div>
         </BackgroundGradientAnimation>
       }
     </div>

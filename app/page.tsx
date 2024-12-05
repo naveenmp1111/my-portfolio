@@ -10,10 +10,10 @@ export default function Home() {
    <main className="dark:bg-black-100 bg-slate-100 flex justify-center items-center flex-col sm:px-10 px-5 ">
     <div className="w-full max-w-7xl">
       <FloatingNav navItems={navItems}/>
-      <Hero/>
+      {/* <Hero/> */}
       <Grid/>
       <AboutMe/>
-      <RecentProjects/>
+      {/* <RecentProjects/> */}
     </div>
    </main>
   );
