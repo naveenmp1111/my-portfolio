@@ -1,14 +1,17 @@
 "use client"
 import { cn } from "@/lib/utils";
 import { FaReact, FaNodeJs } from 'react-icons/fa'; // React and Node.js icons
-import { IoMdCheckmark  } from 'react-icons/io'; // React and Node.js icons
+import { IoMdCheckmark } from 'react-icons/io'; // React and Node.js icons
 import { SiMongodb, SiTailwindcss } from 'react-icons/si'; // MongoDB and other icons
 import { BackgroundGradientAnimation } from "./Background-gradient-animation";
 import MagicButton from "./MagicButton";
 import { useState } from "react";
 import { IoMdCopy } from "react-icons/io";
-import { AnimatePresence,motion } from "framer-motion";
-
+import { AnimatePresence, motion } from "framer-motion";
+import Lottie from 'react-lottie'
+import animationData from '../../data/confetti.json'
+import { AiOutlineDownload } from "react-icons/ai";
+import { AuroraBackground } from "./Aurora-background";
 
 
 export const BentoGrid = ({
@@ -21,7 +24,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "grid md:grid-rows-5 grid-cols-1 md:grid-cols-5 gap-4 max-w-7xl mx-auto mb-5",
+        "grid md:grid-rows-10 lg:grid-cols-7 lg:grid-rows-8 grid-cols-1 sm:grid-rows-8 grid-rows-7 md:grid-cols-6 gap-4 max-w-7xl mx-auto mb-10 sm:px-10",
         className
       )}
     >
@@ -48,23 +51,27 @@ export const BentoGridItem = ({
   image?: string
 }) => {
   const [copied, setCopy] = useState(false)
+  const [downloaded, setDownloaded] = useState(false)
   const handleClick = () => {
     navigator.clipboard.writeText('naveenapk048@gmail.com')
     setCopy(true)
   }
-    const handleDownloadCV = () => {
+  const handleDownloadCV = () => {
+    if (!downloaded) {
       const link = document.createElement('a');
       link.href = '/resume.pdf'; // Path to your resume file
       link.download = 'Naveen_resume.pdf';
       document.body.appendChild(link);
       link.click();
       link.remove();
-    };
+      setDownloaded(true)
+    }
+  };
   const icons = [<SiMongodb key="mongodb" className="w-12 h-12" />, <FaReact key="react" className="w-12 h-12" />, <FaNodeJs key="node" className="w-12 h-12" />, <SiTailwindcss key="tailwind" className="w-12 h-12" />]
   return (
     <div
       className={cn(
-        `row-span-1 relative rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 overflow-hidden`,
+        `row-span-1 relative rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none sm:p-4 p-2 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col sm:space-y-4 overflow-hidden`,
         image ? 'bg-cover bg-center' : '',
         className
       )}
@@ -91,19 +98,20 @@ export const BentoGridItem = ({
         <>
           <h1>TechStack</h1>
           <div className="w-full h-full flex flex-col ">
-            <div className="flex flex-wrap items-center gap-1">
-              {icons.map((icon) => (
-                <span>{icon}</span>
+            <div className="flex flex-wrap items-center gap-1 py-2">
+              {icons.map((icon, idx) => (
+                <span key={idx}>{icon}</span>
               ))}
-              {icons.map((icon) => (
-                <span>{icon}</span>
+              {icons.map((icon, idx) => (
+                <span key={idx}>{icon}</span>
               ))}
-              {icons.map((icon) => (
-                <span>{icon}</span>
+              {icons.map((icon, idx) => (
+                <span key={idx}>{icon}</span>
               ))}
-              {icons.map((icon) => (
-                <span>{icon}</span>
+              {icons.map((icon, idx) => (
+                <span key={idx}>{icon}</span>
               ))}
+
             </div>
           </div>
         </>
@@ -111,31 +119,47 @@ export const BentoGridItem = ({
 
       {
         id == 4 &&
-        <BackgroundGradientAnimation>
-          <AnimatePresence mode="wait">
-          <motion.div
-            key={copied ? 'copied' : 'copy'}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
-          >
-            <MagicButton
-              title={copied ? 'Email Copied!' : 'Copy Email'}
-              icon={copied ? <IoMdCheckmark className="ml-2 text-2xl" /> : <IoMdCopy className="ml-2 text-2xl" />}
-              onClick={handleClick}
+        <AuroraBackground>
+          <div className="absolute ">
+            <Lottie
+              key={copied ? 'copied-true' : 'copied-false'} // Ensure re-render when `copied` changes
+              options={{
+                loop: false, // Only loop when copied is true
+                autoplay: copied, // Autoplay only when copied is true
+                animationData,
+                rendererSettings: {
+                  preserveAspectRatio: 'xMidyMid slice',
+                },
+              }}
             />
-          </motion.div>
-        </AnimatePresence>
-        </BackgroundGradientAnimation>
+
+          </div>
+
+          <MagicButton
+            title={copied ? 'Email Copied!' : 'Copy Email'}
+            icon={copied ? <IoMdCheckmark className="ml-2 text-2xl" /> : <IoMdCopy className="ml-2 text-2xl" />}
+            onClick={handleClick}
+          />
+        </AuroraBackground>
       }
 
       {
         id == 6 &&
         <BackgroundGradientAnimation>
-          <div>
-            <MagicButton title="Download Resume" icon={<IoMdCopy className="mx-1 text-lg" />} onClick={handleDownloadCV}/>
+          <div className="absolute ">
+            <Lottie
+             key={downloaded ? 'copied-true' : 'copied-false'} 
+             options={{
+              loop: false,
+              autoplay: downloaded,
+              animationData,
+              rendererSettings: {
+                preserveAspectRatio: 'xMidyMid slice'
+              }
+            }} />
           </div>
+          <MagicButton title={downloaded ? 'Downloaded   ' : 'Download Resume'} icon={downloaded ? <IoMdCheckmark className="ml-2 text-2xl" /> : <AiOutlineDownload className="mx-1 text-xl" />} onClick={handleDownloadCV} />
+
         </BackgroundGradientAnimation>
       }
     </div>
