@@ -1,7 +1,7 @@
 export const navItems = [
+  { name: "Home", link: "#home" },
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
-  { name: "Testimonials", link: "#testimonials" },
   { name: "Contact", link: "#contact" },
 ];
 
@@ -13,7 +13,8 @@ export const gridItems = [
     className: "lg:col-span-3 md:col-span-3 md:row-span-7 lg:row-span-8 lg:min-h-[60vh] row-span-3 sm:row-span-4",
     imgClassName: "w-full h-full",
     titleClassName: "justify-end",
-    img: "https://www.shutterstock.com/image-photo/calm-weather-on-sea-ocean-600nw-2212935531.jpg",
+    // img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAU3e5xiEUmtCmtK48BMmOPEI1rzKgg7uDqQ&s",
+    img: "https://res.cloudinary.com/dwxhfdats/image/upload/v1733728256/propb3wfqf81k1nwt0jy.jpg",
     spareImg: "",
   },
   {

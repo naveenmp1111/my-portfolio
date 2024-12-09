@@ -4,10 +4,9 @@ import { motion } from 'framer-motion'
 import { BackgroundBeams } from './ui/Background-beams'
 
 const AboutMe = () => {
-    console.log('motion is',motion)
   return (
     <section>
-            <div className="md:h-[80vh] h-screen sm:[70vh] w-ful flex items-center justify-center px-10 py-5 relative">
+            <div className="md:h-[80vh] h-screen sm:[70vh] w-full flex items-center justify-center px-10 py-5 relative">
                 
                 <motion.p
                     className="text-center tracking-wider md:text-lg text-sm opacity-1 font-thin leading-loose md:leading-loose"

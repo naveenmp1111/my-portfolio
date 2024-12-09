@@ -1,4 +1,6 @@
 import AboutMe from "@/components/AboutMe";
+import SignupFormDemo from "@/components/ContactForm";
+import FormGrid from "@/components/FormGrid";
 import Grid from "@/components/Grid";
 import Hero from "@/components/Hero";
 import RecentProjects from "@/components/RecentProjects";
@@ -10,10 +12,11 @@ export default function Home() {
    <main className="dark:bg-black-100 bg-slate-100 flex justify-center items-center flex-col sm:px-10 px-5 ">
     <div className="w-full max-w-7xl">
       <FloatingNav navItems={navItems}/>
-      {/* <Hero/> */}
+      <Hero/>
       <Grid/>
       <AboutMe/>
-      {/* <RecentProjects/> */}
+      <RecentProjects/>
+      <FormGrid/>
     </div>
    </main>
   );

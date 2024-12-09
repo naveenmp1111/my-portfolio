@@ -24,7 +24,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "grid md:grid-rows-10 lg:grid-cols-7 lg:grid-rows-8 grid-cols-1 sm:grid-rows-8 grid-rows-7 md:grid-cols-6 gap-4 max-w-7xl mx-auto mb-10 sm:px-10",
+        "grid md:grid-rows-10 lg:grid-cols-7 lg:grid-rows-8 grid-cols-1 sm:grid-rows-8 grid-rows-7 md:grid-cols-6 gap-4 max-w-7xl mx-auto mb-10 sm:px-10 md:px-24",
         className
       )}
     >
@@ -40,7 +40,8 @@ export const BentoGridItem = ({
   header,
   icon,
   id,
-  image
+  image,
+  index
 }: {
   className?: string;
   title?: string | React.ReactNode;
@@ -48,7 +49,8 @@ export const BentoGridItem = ({
   header?: React.ReactNode;
   icon?: React.ReactNode;
   id?: number,
-  image?: string
+  image?: string,
+  index:number
 }) => {
   const [copied, setCopy] = useState(false)
   const [downloaded, setDownloaded] = useState(false)
@@ -69,7 +71,17 @@ export const BentoGridItem = ({
   };
   const icons = [<SiMongodb key="mongodb" className="w-12 h-12" />, <FaReact key="react" className="w-12 h-12" />, <FaNodeJs key="node" className="w-12 h-12" />, <SiTailwindcss key="tailwind" className="w-12 h-12" />]
   return (
-    <div
+    <motion.div
+    whileHover={{
+      scale: 1.02, // Scale out on hover
+      transition: { duration: 0.1 }, // Smooth transition
+    }}
+    whileInView={{
+      scale: 1, // Scale to full size when in view
+    }}
+    initial={{ scale: 0 }} // Start from a small point (scale 0)
+    transition={{ delay: 0.7, duration: 0.8 }}
+    viewport={{ once: true }}
       className={cn(
         `row-span-1 relative rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none sm:p-4 p-2 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col sm:space-y-4 overflow-hidden`,
         image ? 'bg-cover bg-center' : '',
@@ -162,6 +174,6 @@ export const BentoGridItem = ({
 
         </BackgroundGradientAnimation>
       }
-    </div>
+    </motion.div>
   );
 };
