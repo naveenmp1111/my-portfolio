@@ -1,12 +1,12 @@
 "use client"
 import { cn } from "@/lib/utils";
-import { FaReact, FaNodeJs } from 'react-icons/fa'; // React and Node.js icons
-import { IoMdCheckmark } from 'react-icons/io'; // React and Node.js icons
-import { SiMongodb, SiTailwindcss } from 'react-icons/si'; // MongoDB and other icons
+import { SiMongodb, SiTailwindcss, SiJavascript, SiTypescript, SiHtml5, SiCss3, SiFirebase, SiRedux, SiMysql } from "react-icons/si";
+import { FaReact, FaNodeJs,FaAws } from "react-icons/fa";
+import { GrNode } from "react-icons/gr";
 import { BackgroundGradientAnimation } from "./Background-gradient-animation";
 import MagicButton from "./MagicButton";
 import { useState } from "react";
-import { IoMdCopy } from "react-icons/io";
+import { IoMdCheckmark, IoMdCopy } from "react-icons/io";
 import { AnimatePresence, motion } from "framer-motion";
 import Lottie from 'react-lottie'
 import animationData from '../../data/confetti.json'
@@ -24,7 +24,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "grid md:grid-rows-10 lg:grid-cols-7 lg:grid-rows-8 grid-cols-1 sm:grid-rows-8 grid-rows-7 md:grid-cols-6 gap-4 max-w-7xl mx-auto mb-10 sm:px-10 md:px-24",
+        "grid md:grid-rows-10 lg:grid-cols-7 lg:grid-rows-8 grid-cols-1 sm:grid-rows-7 grid-rows-10 md:grid-cols-6 gap-4 max-w-7xl mx-auto mb-10 sm:px-10 lg:px-24 md:px-16 ",
         className
       )}
     >
@@ -69,7 +69,23 @@ export const BentoGridItem = ({
       setDownloaded(true)
     }
   };
-  const icons = [<SiMongodb key="mongodb" className="w-12 h-12" />, <FaReact key="react" className="w-12 h-12" />, <FaNodeJs key="node" className="w-12 h-12" />, <SiTailwindcss key="tailwind" className="w-12 h-12" />]
+
+const icons = [
+  { icon: <SiMongodb className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-green-600" />, name: "MongoDB" },
+  { icon: <FaReact className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-blue-500" />, name: "React" },
+  { icon: <FaNodeJs className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-green-700" />, name: "Node.js" },
+  { icon: <GrNode className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-gray-500" />, name: "Express" },
+  { icon: <SiRedux className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-purple-600" />, name: "Redux" },
+  { icon: <SiJavascript className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-yellow-500" />, name: "JavaScript" },
+  { icon: <SiTypescript className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-blue-700" />, name: "TypeScript" },
+  { icon: <SiHtml5 className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-orange-600" />, name: "HTML" },
+  { icon: <SiCss3 className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-blue-600" />, name: "CSS" },
+  { icon: <SiTailwindcss className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-teal-500" />, name: "Tailwind CSS" },
+  { icon: <SiFirebase className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-yellow-600" />, name: "Firebase" },
+  { icon: <FaAws className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-orange-500" />, name: "AWS" },
+  { icon: <SiMysql className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-blue-500" />, name: "MySQL" },
+];
+
   return (
     <motion.div
     whileHover={{
@@ -88,7 +104,8 @@ export const BentoGridItem = ({
         className
       )}
       style={{
-        backgroundImage: image && `linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url(${image})`,
+        backgroundImage: image && `url(${image})`,
+        // backgroundImage: image && `linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url(${image})`,
         // : `linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6))`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -108,25 +125,22 @@ export const BentoGridItem = ({
 
       {id == 2 && (
         <>
-          <h1>TechStack</h1>
-          <div className="w-full h-full flex flex-col ">
-            <div className="flex flex-wrap items-center gap-1 py-2">
-              {icons.map((icon, idx) => (
-                <span key={idx}>{icon}</span>
-              ))}
-              {icons.map((icon, idx) => (
-                <span key={idx}>{icon}</span>
-              ))}
-              {icons.map((icon, idx) => (
-                <span key={idx}>{icon}</span>
-              ))}
-              {icons.map((icon, idx) => (
-                <span key={idx}>{icon}</span>
-              ))}
+  <h1 className="text-2xl font-bold mb-1">TechStack</h1>
+  <div className="w-full h-full flex flex-col">
+    <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-4 lg:grid-cols-6 gap-4 py-2">
+      {icons.map((item, idx) => (
+        <div
+          key={idx}
+          className="flex flex-col items-center space-y-2 text-center"
+        >
+          <span className="text-4xl">{item.icon}</span>
+          <span className="lg:text-xs lg:font-normal md:font-extralight sm:text-xs font-extralight text-[10px]">{item.name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</>
 
-            </div>
-          </div>
-        </>
       )}
 
       {

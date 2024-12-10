@@ -13,7 +13,7 @@ const AboutMe = () => {
                     initial={{ opacity: 0, fontWeight: 400,y:100 }}
                     whileInView={{ opacity: 1, fontWeight: 400,y:0 }}
                     transition={{ duration: 3 ,delay:.5}}
-                    viewport={{ once: false }}
+                    viewport={{ once: true }}
                     
                 >
                     Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of 
