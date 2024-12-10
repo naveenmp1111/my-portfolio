@@ -1,66 +1,122 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { cn } from "@/lib/utils";
-import { useForm, ValidationError } from '@formspree/react';
+import { useForm as useReactHookForm } from "react-hook-form";
+import { useForm as useFormspree } from "@formspree/react";
 import { Label } from "./ui/Label";
 import { Input } from "./ui/Input";
 import { Textarea } from "./ui/TextArea";
 
 export default function SignupFormDemo() {
-    const [state, handleSubmit] = useForm("xbljejqp");
-//   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-//     e.preventDefault();
-//     console.log("Form submitted");
-//   };
-if (state.succeeded) {
-    return <p>Thanks for joining!</p>;
-}
-  return (
-    <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
-      {/* <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
-        Welcome to Aceternity
-      </h2>
-      <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
-        Login to aceternity if you can because we don&apos;t have a login flow
-        yet
-      </p> */}
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useReactHookForm();
 
-      <form className="mt-3" onSubmit={handleSubmit}>
-          <LabelInputContainer className="mb-4">
-            <Label htmlFor="firstname">Full Name</Label>
-            <Input id="firstname" placeholder="Tyler" type="text" />
-          </LabelInputContainer>
-          
+  const [state, formspreeSubmit] = useFormspree("xbljejqp"); // Replace YOUR_FORMSPREE_ID with your Formspree endpoint ID
+  const [emailSent, setEmailSent] = useState(false);
+
+  const onSubmit = async (data: any) => {
+    try {
+      const response = await formspreeSubmit(data);
+      console.log('response is ',response)
+      if (state.succeeded) {
+        setEmailSent(true);
+        reset(); // Clear form after successful submission
+        setTimeout(()=>{
+          setEmailSent(false)
+        },10000)
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+    }
+  };
+
+  return (
+    <div className="max-w-md w-full mx-auto rounded-md md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
+      <form className="mt-3" onSubmit={handleSubmit(onSubmit)}>
+        <LabelInputContainer className="mb-4">
+          <Label htmlFor="firstname">Full Name</Label>
+          <Input
+            id="firstname"
+            placeholder="Kendrick Lamar"
+            type="text"
+            {...register("name", {
+              required: "Full Name is required",
+              minLength: { value: 3, message: "Name must be at least 3 characters" },
+            })}
+          />
+          {errors.name && (
+            <p className="text-red-500 text-sm">{errors?.name?.message as string}</p>
+          )}
+        </LabelInputContainer>
+
         <LabelInputContainer className="mb-4">
           <Label htmlFor="email">Email Address</Label>
-          <Input id="email" placeholder="projectmayhem@fc.com" type="email" />
+          <Input
+            id="email"
+            placeholder="xyz@gmail.com"
+            type="email"
+            {...register("email", {
+              required: "Email is required",
+              pattern: {
+                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                message: "Invalid email address",
+              },
+            })}
+          />
+          {errors.email && (
+            <p className="text-red-500 text-sm">{errors.email.message as string}</p>
+          )}
         </LabelInputContainer>
-        <ValidationError 
-        prefix="Email" 
-        field="email"
-        errors={state.errors}
-      />
+
         <LabelInputContainer className="mb-4">
           <Label htmlFor="subject">Subject</Label>
-          <Input id="subject" name="subject" placeholder="••••••••" type="text" />
+          <Input
+            id="subject"
+            placeholder="Topic"
+            type="text"
+            {...register("subject", {
+              required: "Subject is required",
+              minLength: { value: 3, message: "Subject must be at least 3 characters" },
+            })}
+          />
+          {errors.subject && (
+            <p className="text-red-500 text-sm">{errors.subject.message as string}</p>
+          )}
         </LabelInputContainer>
+
         <LabelInputContainer className="mb-4">
           <Label htmlFor="message">Message</Label>
-          <Textarea id="message" name="message" placeholder="••••••••"  />
+          <Textarea
+            id="message"
+            placeholder="Desc"
+            {...register("message", {
+              required: "Message is required",
+              minLength: { value: 10, message: "Message must be at least 10 characters" },
+            })}
+          />
+          {errors.message && (
+            <p className="text-red-500 text-sm">{errors.message.message as string}</p>
+          )}
         </LabelInputContainer>
 
         <button
-        disabled={state.submitting}
+          disabled={state.submitting}
           className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
           type="submit"
         >
           Send Message &rarr;
           <BottomGradient />
         </button>
-
-        {/* <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" /> */}
-
       </form>
+      {emailSent && (
+        <div className="w-full p-1 flex justify-center items-center bg-green-800 my-2 rounded-lg">
+          <span className="text-green-300">Message sent successfully!</span>
+        </div>
+      )}
     </div>
   );
 }

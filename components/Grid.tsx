@@ -6,7 +6,7 @@ import {motion} from 'framer-motion'
 
 const Grid = () => {
   return (
-    <section id='about' className='mt-1'>
+    <section id='about' className='md:mt-10 mt-5'>
        <div
         className='mb-20 mt-8 z-20'>
         <h1 className='text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl break-words font-bold'>About <span className='text-purple'>Me.</span></h1>

@@ -52,35 +52,46 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "3D Solar System Planets to Explore",
-    des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
-    img: "/p1.svg",
+    title: "Sickomode.",
+    des: `Sickomode is a social media platform designed to optimize connectivity and engagement through
+    advanced real-time communication tools and interactive features. It offers real-time chat, video calls and
+    secure access control, ensuring seamless interaction and data security for its users`,
+    img: "https://res.cloudinary.com/dwxhfdats/image/upload/v1733828752/j4ke6on0twulxwfuxkos.png",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "https://github.com/adrianhajdin?tab=repositories",
+    link: "https://ui.sickomode.online/",
   },
   {
     id: 2,
-    title: "Yoom - Video Conferencing App",
-    des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
-    img: "/p2.svg",
+    title: "Ozorawatches",
+    des: `The Ozora Watches is an E-Commerce web application designed to deliver a seamless shopping
+    experience for premium watches. It offers user-friendly navigation, a comprehensive product catalog, and
+    secure payment options, all aimed at simplifying the online shopping process for high-quality watches.`,
+    img: "https://res.cloudinary.com/dwxhfdats/image/upload/v1733828779/hc4cywpi50ngwlhmtzm5.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "https://github.com/adrianhajdin/zoom-clone",
+    link: "https://ozorawatches.online/",
   },
   {
     id: 3,
-    title: "AI Image SaaS - Canva Application",
-    des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
-    img: "/p3.svg",
+    title: "Password Generator",
+    des: `A robust password generator application using React.js.
+    Allows users to securely sign in using their Google accounts.
+    Generates passwords with customizable strength, from easy to strong.
+    Users can easily copy generated passwords to the clipboard with a single click.
+    Securely stores generated passwords in Firestore for easy access and retrieval`,
+    img: "https://res.cloudinary.com/dwxhfdats/image/upload/v1733828826/q9toyzksybh9xbzwqcl3.png",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "https://github.com/adrianhajdin/ai_saas_app",
+    link: "https://github.com/naveenmp1111/Password-Generator",
   },
   {
     id: 4,
-    title: "Animated Apple Iphone 3D Website",
-    des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-    img: "/p4.svg",
+    title: "Netflix",
+    des: `A Netflix clone application developed using React.js. Integrated the TMDB API for content fetching and updates.
+    Users can see the recent movies.
+    Users can watch the trailers.
+    `,
+    img: "https://res.cloudinary.com/dwxhfdats/image/upload/v1733828861/doy6hzf0jy55ukmxpone.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "https://github.com/adrianhajdin/iphone",
+    link: "https://github.com/naveenmp1111/Netflix-Clone",
   },
 ];
 
