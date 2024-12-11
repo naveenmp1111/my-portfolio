@@ -22,6 +22,7 @@ const RecentProjects = () => {
                     initial={{ opacity: 0, y: 60 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 2, delay: (idx+1) * 0.3 }}
+                    viewport={{ once: true }}
                      className=' flex items-center justify-center w-[80vw] sm:w-96 md:w-[450px] h-[21rem]'>
                         <PinContainer title={`Explore`} href={item.link}>
                             <div className="flex  flex-col p-2 tracking-tight text-slate-100/50  w-[80vw] sm:w-96 md:w-[450px] h-[21rem] ">
@@ -43,7 +44,7 @@ const RecentProjects = () => {
                     </motion.div>
                 ))}
             </div>
-            <a href='https://github.com/naveenmp1111' className='flex justify-center md:mt-24 mt-10'>
+            <a href='https://github.com/naveenmp1111' className='flex justify-center md:mt-24 mt-14'>
                        <MagicButton title='More on Github...'/>
                     </a>
         </section>

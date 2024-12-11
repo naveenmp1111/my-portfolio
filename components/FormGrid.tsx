@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { FloatingDock } from './ui/Floating-dock'
 import { SiLeetcode, SiMongodb } from 'react-icons/si'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { BackgroundBeams } from './ui/Background-beams'
 
 const FormGrid = () => {
   const links = [
@@ -38,7 +39,7 @@ const FormGrid = () => {
     },
   ];
   return (
-    <section id='contact' className='h-3/4'>
+    <section id='contact' className='h-3/4 relative'>
       <motion.div
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -55,7 +56,7 @@ const FormGrid = () => {
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 3, delay: 0.2 }}
-          className="flex flex-col justify-center items-center text-center order-2 md:order-1"
+          className="flex flex-col justify-center items-center text-center order-2 md:order-1 z-10"
         >
           <FloatingDock items={links} className='mb-10 mt-14'/>
           <img
@@ -73,10 +74,12 @@ const FormGrid = () => {
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 3, delay: .3 }}
-          className="flex justify-center items-center order-1 md:order-2">
+          viewport={{ once: true }}
+          className="flex justify-center items-center order-1 md:order-2 z-10">
           <SignupFormDemo />
         </motion.div>
       </div>
+      {/* <BackgroundBeams /> */}
     </section>
   )
 }

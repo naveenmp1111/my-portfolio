@@ -4,7 +4,6 @@ import {motion} from 'framer-motion'
 
 const MagicButton = ({ title,onClick,icon,href}: {href?:string, title: string,onClick?:()=>void,icon?:React.ReactNode }) => {
     return (
-        <a>
         <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
@@ -14,7 +13,6 @@ const MagicButton = ({ title,onClick,icon,href}: {href?:string, title: string,on
                 {title}{icon}
             </span>
         </motion.button>
-        </a>
     )
 }
 
