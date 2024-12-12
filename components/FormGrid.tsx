@@ -45,10 +45,10 @@ const FormGrid = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 2, delay: .1 }}
         className='mb-14'>
-        <h1 className='text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl break-words font-bold'>Let's <span className='text-purple'>Connect</span> and <span className='text-purple'>Create </span>together.</h1>
+        <h1 className='text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl break-words font-bold'>Let's <span className='dark:text-purple text-green-700'>Connect</span> and <span className='dark:text-purple text-green-700'>Create </span>together.</h1>
       </motion.div>
       <h2 className="text-center md:text-2xl sm:text-xl text-sm font-semibold text-gray-400 mb-10 md:mb-4">
-      Share your ideas, thoughts, or just drop a message. I’d love to hear from you!
+        Share your ideas, thoughts, or just drop a message. I’d love to hear from you!
       </h2>
 
       <div className="h-fit w-full grid md:grid-cols-2 grid-cols-1 sm:p-10 pb-16 gap-4">
@@ -58,7 +58,7 @@ const FormGrid = () => {
           transition={{ duration: 3, delay: 0.2 }}
           className="flex flex-col justify-center items-center text-center order-2 md:order-1 z-10"
         >
-          <FloatingDock items={links} className='mb-10 mt-14'/>
+          <FloatingDock items={links} className='mb-10 mt-14' />
           <img
             className="h-10 w-10 mb-2"
             src="https://res.cloudinary.com/dwxhfdats/image/upload/v1733730078/nl0wxgjgsl5dpmtrv9zc.png"
@@ -67,7 +67,7 @@ const FormGrid = () => {
           <p className="text-gray-500 font-medium text-xs md:text-[14px]">
             Designed and developed by Naveen MP
           </p>
-          <p className="text-gray-300 text-sm m-1">© 2024</p>
+          <p className="dark:text-gray-300 text-gray-500 text-sm m-1">© 2024</p>
         </motion.div>
 
         <motion.div

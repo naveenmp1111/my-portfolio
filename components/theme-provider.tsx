@@ -1,5 +1,4 @@
 "use client";
-
 import * as React from "react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 
@@ -13,10 +12,16 @@ export function ThemeProvider({
     setIsMounted(true); // Ensure this runs only on the client
   }, []);
 
-  if (!isMounted) {
-    // Prevent rendering until the client determines the theme
-    return null;
-  }
+  if(!isMounted)return null
 
-  return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
+  return (
+    <NextThemesProvider
+      attribute="class"
+      defaultTheme="dark"
+      enableSystem
+      {...props}
+    >
+      {children}
+    </NextThemesProvider>
+  );
 }

@@ -1,7 +1,7 @@
 "use client"
 import { cn } from "@/lib/utils";
 import { SiMongodb, SiTailwindcss, SiJavascript, SiTypescript, SiHtml5, SiCss3, SiFirebase, SiRedux, SiMysql } from "react-icons/si";
-import { FaReact, FaNodeJs,FaAws } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaAws } from "react-icons/fa";
 import { GrNode } from "react-icons/gr";
 import { BackgroundGradientAnimation } from "./Background-gradient-animation";
 import MagicButton from "./MagicButton";
@@ -50,7 +50,7 @@ export const BentoGridItem = ({
   icon?: React.ReactNode;
   id?: number,
   image?: string,
-  index:number
+  index: number
 }) => {
   const [copied, setCopy] = useState(false)
   const [downloaded, setDownloaded] = useState(false)
@@ -70,47 +70,42 @@ export const BentoGridItem = ({
     }
   };
 
-const icons = [
-  { icon: <SiMongodb className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-green-600" />, name: "MongoDB" },
-  { icon: <FaReact className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-blue-500" />, name: "React" },
-  { icon: <FaNodeJs className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-green-700" />, name: "Node.js" },
-  { icon: <GrNode className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-gray-500" />, name: "Express" },
-  { icon: <SiRedux className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-purple-600" />, name: "Redux" },
-  { icon: <SiJavascript className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-yellow-500" />, name: "JavaScript" },
-  { icon: <SiTypescript className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-blue-700" />, name: "TypeScript" },
-  { icon: <SiHtml5 className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-orange-600" />, name: "HTML" },
-  { icon: <SiCss3 className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-blue-600" />, name: "CSS" },
-  { icon: <SiTailwindcss className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-teal-500" />, name: "Tailwind CSS" },
-  { icon: <SiFirebase className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-yellow-600" />, name: "Firebase" },
-  { icon: <FaAws className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-orange-500" />, name: "AWS" },
-  { icon: <SiMysql className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-blue-500" />, name: "MySQL" },
-];
+  const icons = [
+    { icon: <SiMongodb className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-green-600" />, name: "MongoDB" },
+    { icon: <FaReact className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-blue-500" />, name: "React" },
+    { icon: <FaNodeJs className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-green-700" />, name: "Node.js" },
+    { icon: <GrNode className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-gray-500" />, name: "Express" },
+    { icon: <SiRedux className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-purple-600" />, name: "Redux" },
+    { icon: <SiJavascript className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-yellow-500" />, name: "JavaScript" },
+    { icon: <SiTypescript className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-blue-700" />, name: "TypeScript" },
+    { icon: <SiHtml5 className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-orange-600" />, name: "HTML" },
+    { icon: <SiCss3 className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-blue-600" />, name: "CSS" },
+    { icon: <SiTailwindcss className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-teal-500" />, name: "Tailwind CSS" },
+    { icon: <SiFirebase className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-yellow-600" />, name: "Firebase" },
+    { icon: <FaAws className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-orange-500" />, name: "AWS" },
+    { icon: <SiMysql className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-blue-500" />, name: "MySQL" },
+  ];
 
   return (
     <motion.div
-    whileHover={{
-      scale: 1.02, // Scale out on hover
-      transition: { duration: 0.1 }, // Smooth transition
-    }}
-    whileInView={{
-      scale: 1, // Scale to full size when in view
-    }}
-    initial={{ scale: 0 }} // Start from a small point (scale 0)
-    transition={{ delay: 0.7, duration: 0.8 }}
-    viewport={{ once: true }}
+      whileInView={{
+        scale: 1, // Scale to full size when in view
+        opacity: 1, // Ensure full visibility when in view
+      }}
+      initial={{ scale: 0.9, opacity: 0 }} // Start slightly smaller and transparent
+      transition={{ delay: 0.1, duration: .8, ease: "easeInOut" }} // Smooth entry
       className={cn(
-        `row-span-1 relative rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none sm:p-4 p-2 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col sm:space-y-4 overflow-hidden`,
+        `row-span-1 relative rounded-xl group/bento hover:shadow-lg transition-all duration-300 shadow-lg dark:shadow-none sm:p-4 p-2 dark:bg-black dark:border-white/[0.2] bg-white border border-none justify-between flex flex-col sm:space-y-4 overflow-hidden`,
         image ? 'bg-cover bg-center' : '',
         className
       )}
       style={{
         backgroundImage: image && `url(${image})`,
-        // backgroundImage: image && `linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url(${image})`,
-        // : `linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6))`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
+
       {/* {header}
       <div className="group-hover/bento:translate-x-2 transition duration-200 ">
         {icon}
@@ -125,21 +120,21 @@ const icons = [
 
       {id == 2 && (
         <>
-  <h1 className="text-2xl font-bold mb-1">TechStack</h1>
-  <div className="w-full h-full flex flex-col">
-    <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-4 lg:grid-cols-6 gap-4 py-2">
-      {icons.map((item, idx) => (
-        <div
-          key={idx}
-          className="flex flex-col items-center space-y-2 text-center"
-        >
-          <span className="text-4xl">{item.icon}</span>
-          <span className="lg:text-xs lg:font-normal md:font-extralight sm:text-xs font-extralight text-[10px]">{item.name}</span>
-        </div>
-      ))}
-    </div>
-  </div>
-</>
+          <h1 className="text-2xl font-bold mb-1">TechStack</h1>
+          <div className="w-full h-full flex flex-col">
+            <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-4 lg:grid-cols-6 gap-4 py-2">
+              {icons.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="flex flex-col items-center space-y-2 text-center"
+                >
+                  <span className="text-4xl">{item.icon}</span>
+                  <span className="lg:text-xs lg:font-normal md:font-extralight sm:text-xs font-extralight text-[10px]">{item.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </>
 
       )}
 
@@ -174,15 +169,15 @@ const icons = [
         <BackgroundGradientAnimation>
           <div className="absolute ">
             <Lottie
-             key={downloaded ? 'copied-true' : 'copied-false'} 
-             options={{
-              loop: false,
-              autoplay: downloaded,
-              animationData,
-              rendererSettings: {
-                preserveAspectRatio: 'xMidyMid slice'
-              }
-            }} />
+              key={downloaded ? 'copied-true' : 'copied-false'}
+              options={{
+                loop: false,
+                autoplay: downloaded,
+                animationData,
+                rendererSettings: {
+                  preserveAspectRatio: 'xMidyMid slice'
+                }
+              }} />
           </div>
           <MagicButton title={downloaded ? 'Downloaded   ' : 'Download Resume'} icon={downloaded ? <IoMdCheckmark className="ml-2 text-2xl" /> : <AiOutlineDownload className="mx-1 text-xl" />} onClick={handleDownloadCV} />
 
