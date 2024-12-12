@@ -1,6 +1,6 @@
 "use client"
 import { cn } from "@/lib/utils";
-import { SiMongodb, SiTailwindcss, SiJavascript, SiTypescript, SiHtml5, SiCss3, SiFirebase, SiRedux, SiMysql } from "react-icons/si";
+import { SiMongodb, SiTailwindcss, SiJavascript, SiTypescript, SiHtml5, SiCss3, SiFirebase, SiRedux, SiMysql, SiBootstrap, SiNginx, SiC, SiCplusplus, SiExpress } from "react-icons/si";
 import { FaReact, FaNodeJs, FaAws } from "react-icons/fa";
 import { GrNode } from "react-icons/gr";
 import { BackgroundGradientAnimation } from "./Background-gradient-animation";
@@ -74,26 +74,31 @@ export const BentoGridItem = ({
     { icon: <SiMongodb className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-green-600" />, name: "MongoDB" },
     { icon: <FaReact className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-blue-500" />, name: "React" },
     { icon: <FaNodeJs className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-green-700" />, name: "Node.js" },
-    { icon: <GrNode className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-gray-500" />, name: "Express" },
-    { icon: <SiRedux className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-purple-600" />, name: "Redux" },
+    { icon: <SiExpress className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-gray-500" />, name: "Express" },
+    { icon: <SiRedux className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-violet-700" />, name: "Redux" },
     { icon: <SiJavascript className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-yellow-500" />, name: "JavaScript" },
     { icon: <SiTypescript className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-blue-700" />, name: "TypeScript" },
     { icon: <SiHtml5 className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-orange-600" />, name: "HTML" },
     { icon: <SiCss3 className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-blue-600" />, name: "CSS" },
     { icon: <SiTailwindcss className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-teal-500" />, name: "Tailwind CSS" },
-    { icon: <SiFirebase className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-yellow-600" />, name: "Firebase" },
+    { icon: <SiFirebase className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-yellow-400" />, name: "Firebase" },
     { icon: <FaAws className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-orange-500" />, name: "AWS" },
     { icon: <SiMysql className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-blue-500" />, name: "MySQL" },
+    { icon: <SiBootstrap className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-violet-700" />, name: "Bootstrap" },
+    { icon: <SiNginx className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-green-500" />, name: "NGINX" },
+    { icon: <SiC className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-blue-600" />, name: "C" },
+    { icon: <SiCplusplus className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-blue-500" />, name: "C++" },
   ];
 
   return (
     <motion.div
-      whileInView={{
-        scale: 1, // Scale to full size when in view
-        opacity: 1, // Ensure full visibility when in view
-      }}
-      initial={{ scale: 0.9, opacity: 0 }} // Start slightly smaller and transparent
-      transition={{ delay: 0.1, duration: .8, ease: "easeInOut" }} // Smooth entry
+    initial={{ scale: 0.93,opacity:0 }}
+    whileInView={{ scale: 1 ,opacity:1}}
+    viewport={{ once: true }}
+    transition={{
+      duration: 1.5,
+      ease: [0.34, 1.56, 0.64, 1], // Custom bezier curve for smooth, slightly bouncy animation
+    }}
       className={cn(
         `row-span-1 relative rounded-xl group/bento hover:shadow-lg transition-all duration-300 shadow-lg dark:shadow-none sm:p-4 p-2 dark:bg-black dark:border-white/[0.2] bg-white border border-none justify-between flex flex-col sm:space-y-4 overflow-hidden`,
         image ? 'bg-cover bg-center' : '',

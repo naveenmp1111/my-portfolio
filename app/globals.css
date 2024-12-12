@@ -5,3 +5,9 @@
 html {
     scroll-behavior: smooth;
   }
+/* Ensure the page has a default background during loading */
+body.app-loading {
+  background-color: #000; /* Match your dark theme */
+  color: #fff; /* Ensure contrast */
+  transition: none; /* Disable flickering */
+}

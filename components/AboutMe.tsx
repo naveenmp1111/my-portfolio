@@ -39,7 +39,7 @@ const AboutMe = () => {
             viewport={{ once: true }}
           >
             After graduation, I delved into an intensive self-learning program focused on MERN stack development.
-            This journey was not just about gaining technical expertise but also about cultivating discipline, adaptability, and problem-solving skills. By dedicating 12–16 hours daily, I strengthened my
+            This journey was not just about gaining technical expertise but also about fostering discipline, adaptability, and problem-solving skills. By dedicating myself, I strengthened   
             understanding of modern web development frameworks and technologies while adhering to industry standards.
           </motion.p>
 
@@ -51,7 +51,7 @@ const AboutMe = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             viewport={{ once: true }}
           >
-            What drives me:
+            What drives me?
           </motion.h2>
           <motion.p
             className="text-start"
@@ -63,6 +63,26 @@ const AboutMe = () => {
             What excites me about software development is the endless possibilities to solve real-world problems and
             create meaningful user experiences. I value teamwork and innovation,
             and I believe in pushing the boundaries of what’s possible through collaboration and continuous learning.
+          </motion.p>
+
+          {/* Vision */}
+          <motion.h2
+            className="text-start mt-5 mb-1 font-extrabold text-xl"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.0 }}
+            viewport={{ once: true }}
+          >
+            My Vision:
+          </motion.h2>
+          <motion.p
+            className="text-start"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+            viewport={{ once: true }}
+          >
+            My vision is to create impactful technology that solves real-world challenges through innovation and collaboration, leaving a lasting legacy in the tech industry.
           </motion.p>
 
           {/* Education */}

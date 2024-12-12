@@ -13,7 +13,7 @@ const RecentProjects = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 2, delay: .1 }}
                 className='my-20 mb-10 md:mb-20'>
-                <h1 className='text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl break-words font-bold'>Some of my recent <span className='dark:text-purple text-green-700'>Projects</span></h1>
+                <h1 className='text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl break-words font-bold'>Few of my recent <span className='dark:text-purple text-green-700'>Projects</span></h1>
             </motion.div>
             <div className='flex flex-wrap gap-x-28 gap-y-24 mt-10 items-center justify-center p-4'>
                 {projects.map((item, idx) => (
@@ -45,7 +45,7 @@ const RecentProjects = () => {
                 ))}
             </div>
             <a href='https://github.com/naveenmp1111' className='flex justify-center md:mt-24 mt-14'>
-                <MagicButton title='More on Github...' />
+                <MagicButton title='Explore more on Github...' />
             </a>
         </section>
     )

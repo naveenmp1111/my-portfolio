@@ -6,38 +6,40 @@ import { FloatingDock } from './ui/Floating-dock'
 import { SiLeetcode, SiMongodb } from 'react-icons/si'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { BackgroundBeams } from './ui/Background-beams'
+import { FaXTwitter } from 'react-icons/fa6'
 
 const FormGrid = () => {
   const links = [
     {
       title: "GitHub",
       icon: (
-        <FaGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <FaGithub className="h-full w-full text-black dark:text-gray-200 hover:text-gray-700 dark:hover:text-white" />
       ),
       href: "https://github.com/naveenmp1111",
     },
     {
       title: "LinkedIn",
       icon: (
-        <FaLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <FaLinkedin className="h-full w-full text-blue-700 dark:text-blue-700 hover:text-blue-800 dark:hover:text-blue-600" />
       ),
       href: "https://www.linkedin.com/in/naveen-mp-a357a6289/",
     },
     {
       title: "LeetCode",
       icon: (
-        <SiLeetcode className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <SiLeetcode className="h-full w-full text-orange-600 dark:text-orange-600 hover:text-orange-800 dark:hover:text-orange-500" />
       ),
       href: "https://leetcode.com/u/naveenmp1111/",
     },
     {
       title: "Twitter",
       icon: (
-        <FaTwitter className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <FaXTwitter className="h-full w-full text-blue-500 dark:text-gray-200 hover:text-blue-700 dark:hover:text-white" />
       ),
       href: "https://x.com/naveenmp666",
     },
   ];
+  
   return (
     <section id='contact' className='h-3/4 relative'>
       <motion.div
