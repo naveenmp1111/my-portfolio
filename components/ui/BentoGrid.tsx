@@ -1,6 +1,6 @@
 "use client"
 import { cn } from "@/lib/utils";
-import { SiMongodb, SiTailwindcss, SiJavascript, SiTypescript, SiHtml5, SiCss3, SiFirebase, SiRedux, SiMysql, SiBootstrap, SiNginx, SiC, SiCplusplus, SiExpress } from "react-icons/si";
+import { SiMongodb, SiTailwindcss, SiJavascript, SiTypescript, SiHtml5, SiCss3, SiFirebase, SiRedux, SiMysql, SiBootstrap, SiNginx, SiC, SiCplusplus, SiExpress, SiVercel } from "react-icons/si";
 import { FaReact, FaNodeJs, FaAws } from "react-icons/fa";
 import { GrNode } from "react-icons/gr";
 import { BackgroundGradientAnimation } from "./Background-gradient-animation";
@@ -88,6 +88,7 @@ export const BentoGridItem = ({
     { icon: <SiNginx className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-green-500" />, name: "NGINX" },
     { icon: <SiC className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-blue-600" />, name: "C" },
     { icon: <SiCplusplus className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-blue-500" />, name: "C++" },
+    { icon: <SiVercel className="lg:w-10 lg:h-10 md:w-7 md:h-7 sm:w-6 sm:h-6 h-6 w-6 text-white" />, name: "Vercel" }
   ];
 
   return (
