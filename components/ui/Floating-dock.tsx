@@ -1,7 +1,7 @@
 /**
  * Note: Default FloatingDock for desktop, optimized for simplicity
  */
-
+'use client'
 import { cn } from "@/lib/utils";
 import {
   MotionValue,
