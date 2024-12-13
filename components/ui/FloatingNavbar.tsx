@@ -41,6 +41,7 @@ export const FloatingNav = ({
   // Track the active section
   useEffect(() => {
     const handleScroll = () => {
+      if (typeof document === "undefined") return;
       navItems.forEach((item) => {
         const section = document.querySelector(item.link); // Assuming `link` is an id like "#section1"
         if (section) {

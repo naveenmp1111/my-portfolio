@@ -58,7 +58,7 @@ export const BentoGridItem = ({
     setCopy(true)
   }
   const handleDownloadCV = () => {
-    if (!downloaded) {
+    if (typeof document !== 'undefined' && !downloaded) {
       const link = document.createElement('a');
       link.href = '/resume.pdf'; // Path to your resume file
       link.download = 'Naveen_resume.pdf';
