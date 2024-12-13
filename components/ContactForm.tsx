@@ -19,8 +19,8 @@ export default function SignupFormDemo() {
   console.log('FormspreeId:', formSpreeId);
   const [state, formspreeSubmit] = useFormspree(formSpreeId); // Replace YOUR_FORMSPREE_ID with your Formspree endpoint ID
   const [emailSent, setEmailSent] = useState(false);
-//@ts-expect-error
-  const onSubmit = async (data) => {
+
+  const onSubmit = async (data:any) => {
     try {
 
       const response = await formspreeSubmit(data);
