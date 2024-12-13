@@ -2,7 +2,7 @@
 import React from 'react'
 import {motion} from 'framer-motion'
 
-const MagicButton = ({ title,onClick,icon,href}: {href?:string, title: string,onClick?:()=>void,icon?:React.ReactNode }) => {
+const MagicButton = ({ title,onClick,icon}: { title: string,onClick?:()=>void,icon?:React.ReactNode }) => {
     return (
         <motion.button
         whileHover={{ scale: 1.05 }}

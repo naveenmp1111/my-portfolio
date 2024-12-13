@@ -20,7 +20,7 @@ const Hero = () => {
                 <div className='flex justify-center relative my-20 z-10'>
                     <div
                         className='max-w-[89vw] flex flex-col md:gap-0 gap-2'>
-                        <h2 className='uppercase tracking-widest sm:text-sm text-xs text-center dark:text-blue-100 text-blue-950'>Hey! I'm excited to share my journey with you.</h2>
+                        <h2 className='uppercase tracking-widest sm:text-sm text-xs text-center dark:text-blue-100 text-blue-950'>Hey! I&apos;m excited to share my journey with you.</h2>
                         <TextGenerateEffect
                             className='text-center text-[28px] sm:text-[40px] md:text-5xl lg:text-6xl'
                             words="I'm Naveen M.P., a passionate MERN Stack Developer from Kochi, Kerala."

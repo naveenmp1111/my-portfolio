@@ -2,12 +2,11 @@
 import { cn } from "@/lib/utils";
 import { SiMongodb, SiTailwindcss, SiJavascript, SiTypescript, SiHtml5, SiCss3, SiFirebase, SiRedux, SiMysql, SiBootstrap, SiNginx, SiC, SiCplusplus, SiExpress, SiVercel } from "react-icons/si";
 import { FaReact, FaNodeJs, FaAws } from "react-icons/fa";
-import { GrNode } from "react-icons/gr";
 import { BackgroundGradientAnimation } from "./Background-gradient-animation";
 import MagicButton from "./MagicButton";
 import { useState } from "react";
 import { IoMdCheckmark, IoMdCopy } from "react-icons/io";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Lottie from 'react-lottie'
 import animationData from '../../data/confetti.json'
 import { AiOutlineDownload } from "react-icons/ai";
@@ -35,22 +34,22 @@ export const BentoGrid = ({
 
 export const BentoGridItem = ({
   className,
-  title,
-  description,
-  header,
-  icon,
+  // title,
+  // description,
+  // header,
+  // icon,
   id,
   image,
-  index
+  // index
 }: {
   className?: string;
-  title?: string | React.ReactNode;
-  description?: string | React.ReactNode;
-  header?: React.ReactNode;
-  icon?: React.ReactNode;
+  // title?: string | React.ReactNode;
+  // description?: string | React.ReactNode;
+  // header?: React.ReactNode;
+  // icon?: React.ReactNode;
   id?: number,
   image?: string,
-  index: number
+  // index: number
 }) => {
   const [copied, setCopy] = useState(false)
   const [downloaded, setDownloaded] = useState(false)

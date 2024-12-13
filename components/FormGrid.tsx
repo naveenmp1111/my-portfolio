@@ -3,9 +3,8 @@ import React from 'react'
 import SignupFormDemo from './ContactForm'
 import { motion } from 'framer-motion'
 import { FloatingDock } from './ui/Floating-dock'
-import { SiLeetcode, SiMongodb } from 'react-icons/si'
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
-import { BackgroundBeams } from './ui/Background-beams'
+import { SiLeetcode } from 'react-icons/si'
+import { FaGithub, FaLinkedin} from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 
 const FormGrid = () => {
@@ -47,7 +46,7 @@ const FormGrid = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 2, delay: .1 }}
         className='mb-14'>
-        <h1 className='text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl break-words font-bold'>Let's <span className='dark:text-purple text-green-700'>Connect</span> and <span className='dark:text-purple text-green-700'>Create </span>together.</h1>
+        <h1 className='text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl break-words font-bold'>Let&apos;s <span className='dark:text-purple text-green-700'>Connect</span> and <span className='dark:text-purple text-green-700'>Create </span>together.</h1>
       </motion.div>
       <h2 className="text-center md:text-2xl sm:text-xl text-sm font-semibold text-gray-400 mb-10 md:mb-4">
         Share your ideas, thoughts, or just drop a message. I’d love to hear from you!

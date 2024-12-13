@@ -1,5 +1,5 @@
 'use client'
-import { FiSun, FiMoon } from "react-icons/fi"
+import { FiSun} from "react-icons/fi"
 import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import { IoMoon } from "react-icons/io5"
