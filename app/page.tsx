@@ -8,12 +8,12 @@ const DynamicFloatingNav = dynamic(() =>
   import('@/components/ui/FloatingNavbar').then((mod) => mod.FloatingNav),
   {
     ssr: false, //Disabled Server-Side Rendering 
-    loading: () => <p>Loading...</p>, //fallback
+    loading: () => <p>...</p>, //fallback
   }
 );
 const Grid = dynamic(() => import('@/components/Grid'), {
   ssr: false, // Optional: Disable SSR if the component uses browser-only features
-  loading: () => <p>Loading grid...</p>, // Optional: Provide a loading fallback
+  loading: () => <p>...</p>, // Optional: Provide a loading fallback
 });
 import { TracingBeam } from "@/components/ui/Tracing-beam";
 import { navItems } from "@/data";

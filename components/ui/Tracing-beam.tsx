@@ -1,11 +1,6 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
-import {
-  motion,
-  useTransform,
-  useScroll,
-  useSpring,
-} from "framer-motion";
+import React, { useEffect, useRef, useState, useCallback } from "react";
+import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export const TracingBeam = ({
@@ -20,11 +15,28 @@ export const TracingBeam = ({
 
   const [svgHeight, setSvgHeight] = useState(0);
 
-  useEffect(() => {
+  // Function to update the SVG height
+  const updateHeight = useCallback(() => {
     if (contentRef.current) {
       setSvgHeight(contentRef.current.offsetHeight);
     }
   }, []);
+
+  useEffect(() => {
+    updateHeight(); // Initial height calculation
+
+    const resizeObserver = new ResizeObserver(() => {
+      updateHeight(); // Update on content resize
+    });
+
+    if (contentRef.current) {
+      resizeObserver.observe(contentRef.current);
+    }
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, [updateHeight]);
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -50,7 +62,7 @@ export const TracingBeam = ({
     <motion.div
       ref={ref}
       className={cn(
-        "relative w-full max-w-full mx-auto h-fit", // Use hidden on smaller screens
+        "relative w-full max-w-full mx-auto max-h-full",
         className
       )}
     >

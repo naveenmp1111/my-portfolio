@@ -7,7 +7,7 @@ const BentoGrid = dynamic(() =>
   import('./ui/BentoGrid').then((mod) => mod.BentoGrid),
   {
     ssr: false, // Disabled SSR 
-    loading: () => <p>Loading BentoGrid...</p>, // fallback
+    loading: () => <p>...</p>, // fallback
   }
 );
 
@@ -15,7 +15,7 @@ const BentoGridItem = dynamic(() =>
   import('./ui/BentoGrid').then((mod) => mod.BentoGridItem),
   {
     ssr: false, 
-    loading: () => <p>Loading BentoGridItem...</p>, 
+    loading: () => <p>...</p>, 
   }
 );
 
