@@ -1,7 +1,24 @@
 "use client"
+import dynamic from 'next/dynamic';
 import React from 'react'
-import { BentoGrid, BentoGridItem } from './ui/BentoGrid'
 import { gridItems } from '@/data'
+
+const BentoGrid = dynamic(() =>
+  import('./ui/BentoGrid').then((mod) => mod.BentoGrid),
+  {
+    ssr: false, // Disabled SSR 
+    loading: () => <p>Loading BentoGrid...</p>, // fallback
+  }
+);
+
+const BentoGridItem = dynamic(() =>
+  import('./ui/BentoGrid').then((mod) => mod.BentoGridItem),
+  {
+    ssr: false, 
+    loading: () => <p>Loading BentoGridItem...</p>, 
+  }
+);
+
 
 const Grid = () => {
   return (

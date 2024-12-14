@@ -1,8 +1,8 @@
 "use client"
+import dynamic from 'next/dynamic';
 import { cn } from "@/lib/utils";
 import { SiMongodb, SiTailwindcss, SiJavascript, SiTypescript, SiHtml5, SiCss3, SiFirebase, SiRedux, SiMysql, SiBootstrap, SiNginx, SiC, SiCplusplus, SiExpress, SiVercel } from "react-icons/si";
 import { FaReact, FaNodeJs, FaAws } from "react-icons/fa";
-import { BackgroundGradientAnimation } from "./Background-gradient-animation";
 import MagicButton from "./MagicButton";
 import { useState } from "react";
 import { IoMdCheckmark, IoMdCopy } from "react-icons/io";
@@ -11,7 +11,13 @@ import Lottie from 'react-lottie'
 import animationData from '../../data/confetti.json'
 import { AiOutlineDownload } from "react-icons/ai";
 import { AuroraBackground } from "./Aurora-background";
-
+const BackgroundGradientAnimation = dynamic(() =>
+  import('./Background-gradient-animation').then((mod) => mod.BackgroundGradientAnimation),
+  {
+    ssr: false, // Optional: Disable SSR if this component uses browser-specific features
+    loading: () => <p>Loading animation...</p>, // Optional: Provide a loading fallback
+  }
+);
 
 export const BentoGrid = ({
   className,
