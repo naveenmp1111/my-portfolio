@@ -58,7 +58,7 @@ export const projects = [
     secure access control, ensuring seamless interaction and data security for its users`,
     img: "https://res.cloudinary.com/dwxhfdats/image/upload/v1733828752/j4ke6on0twulxwfuxkos.png",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "https://ui.sickomode.online/",
+    link: "https://sickomode.vercel.app/",
   },
   {
     id: 2,
@@ -68,7 +68,7 @@ export const projects = [
     secure payment options, all aimed at simplifying the online shopping process for high-quality watches.`,
     img: "https://res.cloudinary.com/dwxhfdats/image/upload/v1733828779/hc4cywpi50ngwlhmtzm5.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "https://ozorawatches.online/",
+    link: "https://ozorawatches.store/",
   },
   {
     id: 3,
